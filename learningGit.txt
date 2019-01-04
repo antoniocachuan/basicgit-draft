@@ -1,0 +1,64 @@
+Instalar Git
+1. abrir como administrador el powershell
+2. ejecutar, dar yes
+Set-ExecutionPolicy Unrestricted
+3. install chocolaty
+Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+4. install git 
+choco install git -params "/GitAndUnixToolsonPath"
+5. validar la instalacion
+git --version
+
+Estados Git
+Commits son snaptshots de la version del proyecto
+Estados 
+1. Untracked
+cualquier archivo creado
+demo.txt
+2. Tracked
+archivo creado del cual git toma conocimiento
+git add demo.txt
+3. Modified
+archivo seguido por git y modificado
+hacemos alguna modificacion a demo.txt git automaticamente lo marca como modified
+4. Staged
+archivo final que se encuentra listo para ser comiteado
+hago volviendo a ejecutar git add demo.txt
+
+Cuando comiteas todos los archivos pasan a tracked
+
+ls -a ver archivos ocultos
+ls -al mejor orden
+
+Primer proyecto
+
+1. iniciar el repositorio
+git init
+
+2. veamos el contenido
+ls .git
+
+3. veamos el status del proyecto
+git status
+
+4. digamosle a git quienes somos
+git config user.name "Antonio Cachuan"
+git config user.email "antoniocachuan@gmail.com"
+estos datos seran guardados dentro del archivo config podemos verlo ejecutando
+cat .git/config
+esto lo tienes que hacer por cada uno de los nuevos repositorios
+
+5. digamosle a git quienes somos II 
+Cuando queremos setear para todos los proyectos
+git config --global user.name "Antonio Cachuan"
+git config --global user.email "antoniocachuan@gmail.com"
+
+
+
+
+
+
+
+
+
+
