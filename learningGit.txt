@@ -54,11 +54,23 @@ git config --global user.name "Antonio Cachuan"
 git config --global user.email "antoniocachuan@gmail.com"
 
 
+6 Creemos el archivo test.txt y ejecutemos git status veremos que no estan trackeando el archivo
+git status
+
+7 El comando lo pondra en estado Staged
+git add test.txt 
 
 
+Commits
+Toma todos los archivos de en estado Staged y toma la foto
 
+git commit -m "first commit"
 
+Genera el quinto estado 
+Snapshot
+donde esta un hash identifica la foto
 
-
-
+ahora modifiquemos el archivo y dar git status aparece como modified.
+Para poder comitear ese cambio necesito primero hacer un git add test.txt
+y luego el commit
 
