@@ -75,3 +75,78 @@ Para poder comitear ese cambio necesito primero hacer un git add test.txt
 y luego el commit
 
 Agreguemos un archivo para notar que este estara como untracked y modifiquemos el otro 
+
+HISTORY OF THE PROJECT
+
+git log
+
+muestra toda la historia de Commits
+
+git log -2
+solo 2 ultimos commits
+
+git log --oneline
+muestra en una linea cada commit
+
+git log --oneline -2
+
+git log --before="2019-02-01"
+git log --after="2018-02-01"
+git log --after="2018-02-01T15:00:00-05:00"
+git log --since="2 days ago"
+git log --after="1 week ago"
+git log --author="Jorge"
+
+git checkout 1b3n43
+me regresa a una version anterior pero no puedo hacer commit desde alli
+
+para regresar
+git checkout master
+
+
+No commitear archivos o evitar trackearlo
+creo un archivo .gitignore
+puedo poner test.txt
+o 
+
+*.xls 
+
+
+Para ver lo que se cambio en la ultima version guardada vs la ultima comiteada 
+el ^ permite ver lo quitado
+git diff --staged
+git diff --HEAD^ 
+En verde sale lo que se agrega
+
+git diff 3j43j3
+Diferencia frente a un commit en especifico
+
+Para comparar entre dos versiones anteriores
+git diff br343f..fe345f
+
+
+Modificar el contenido de un mensaje de commit, lo edito con vi
+git commit --ammend
+
+Cambiar el editor de vi a vscode
+git config core.editor "atom --wait"
+
+si commiteo y quiero agregar un archivo dentro del mismo commit 
+o modifique el archivo puedo correr
+git add .
+git commit --ammend me aparecera un editor que ya detecta los cambios y puedo cambiar el mensaje del commit
+
+
+Si despues de un commit modifico un archivo (sin hacer git add) pero quiero regresar a un estado anterior
+ejecuto el codigo
+
+git checkout -- test.txt
+
+Si son varios archivos modificados despues del commit pero antes de un siguiente git add
+git reset HEAD --hard los regresa al estado del ultimo commit
+
+Si modifico varios archivos y ahora hago git add , y commit
+puedo regresar a un commit anterior puedo cambiar el head por el hash de uno mas antiguo
+
+git reset HEAD^ --hard
+
