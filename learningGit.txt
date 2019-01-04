@@ -74,3 +74,4 @@ ahora modifiquemos el archivo y dar git status aparece como modified.
 Para poder comitear ese cambio necesito primero hacer un git add test.txt
 y luego el commit
 
+Agreguemos un archivo para notar que este estara como untracked y modifiquemos el otro 
